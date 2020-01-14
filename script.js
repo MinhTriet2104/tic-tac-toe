@@ -16,16 +16,16 @@ const winConditions = [
 
 // Restart game event
 btnRestart.addEventListener("click", () => {
+  boardElemnt.classList.remove("o");
+  boardElemnt.classList.add("x");
   cellElements.forEach(cell => {
-    boardElemnt.classList.remove("o");
-    boardElemnt.classList.add("x");
     cell.classList.remove("x");
     cell.classList.remove("o");
-    gameMessage.classList.remove("show");
   });
+  gameMessage.classList.remove("show");
 });
 
-// Event for cell
+// Add Event for cell
 cellElements.forEach(cell =>
   cell.addEventListener("click", () => {
     cell.classList.add(boardElemnt.classList[1]);
